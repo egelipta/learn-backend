@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+tortoise-orm
+python-dotenv
+pydantic
+aiomysql
+passlib[bcrypt]
+pyjwt
+python-multipart
+python-jose
+pydantic-settings
+typing-extensions==4.6.1

@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  inidb:
+    image: mysql:5.7
+    container_name: inidb
+    environment:
+      MYSQL_ROOT_PASSWORD: ${CONF_MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${CONF_MYSQL_DATABASE_NAME}
+      MYSQL_USER: ${CONF_MYSQL_USER}
+      MYSQL_PASSWORD: ${CONF_MYSQL_PASSWORD}
+      MYSQL_MAX_ALLOWED_PACKET: 512M
+    restart: unless-stopped
+    ports:
+      - "${CONF_MYSQL_PORT}:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+  inipma:
+    image: phpmyadmin:latest
+    container_name: inipma
+    environment:
+      PMA_HOST: inidb
+      PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 512M
+    restart: always
+    ports:
+      - 8084:80
+    links:
+      - inidb
+volumes:
+  dbdata:

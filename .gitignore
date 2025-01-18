@@ -1,0 +1,78 @@
+# Python Bytecode Files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Jupyter Notebooks Checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Coverage Reports
+.coverage
+*.coveragerc
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Local configuration files
+*.env
+*.flaskenv
+*.envrc
+
+# Docker
+docker-compose.override.yml
+Dockerfile
+*.dockerfile
+
+# Test outputs
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+
+# Pytest
+.cache/
+pytest_cache/
+
+# Sphinx documentation
+docs/_build/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# Pylint
+.pylint.d/
+
+# Black
+*.bak
+
+# macOS Finder folder
+.DS_Store
+
+# Windows Thumbs.db
+Thumbs.db
+
+# Vim swap files
+*.swp
+
+# NPM and Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# pipenv
+Pipfile.lock
