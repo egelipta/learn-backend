@@ -5,7 +5,7 @@ from api.api import api_router
 from secure.config import settings
 
 
-application = FastAPI(title="INIBACKEND")
+application = FastAPI(title="LEARN_BACKEND")
 
 # Menghubungkan router ke aplikasi FastAPI
 application.include_router(api_router)

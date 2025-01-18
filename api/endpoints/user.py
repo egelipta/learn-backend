@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from models.user import User
 from schemas.user import UserCreate, UserLogin, TokenResponse
-from secure.security import hash_password, verify_password, create_access_token
+from secure.utils import hash_password, verify_password, create_access_token
 
 router = APIRouter()
 
@@ -29,5 +29,14 @@ async def get_user(user_id: int):
         return {"id": user.id, "username": user.username, "email": user.email}
     else:
         raise HTTPException(status_code=404, detail="User not found")
+
+@router.post("/user/login", response_model=TokenResponse)
+async def login(user_login: UserLogin):
+    user = await User.filter(username=user_login.username).first()
+    if not user or not verify_password(user_login.password, user.hashed_password):
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    token = create_access_token({"sub": user.username})
+    return {"access_token": token, "token_type": "bearer"}
 
 

@@ -9,18 +9,15 @@ TORTOISE_ORM = {
         "conn": {
             "engine": "tortoise.backends.mysql",
             "credentials": {
-                "host": os.getenv("PDA_MYSQL_HOST", "localhost"),
-                "user": os.getenv("PDA_MYSQL_USER", "user"),
-                "password": os.getenv("PDA_MYSQL_PASSWORD", "rahasia123"),
-                "port": int(os.getenv("PDA_MYSQL_PORT", 3306)),
-                "database": os.getenv("PDA_MYSQL_DATABASE_NAME", "database"),
+                "host": os.getenv("CONF_MYSQL_HOST", "localhost"),
+                "user": os.getenv("CONF_MYSQL_USER", "user"),
+                "password": os.getenv("CONF_MYSQL_PASSWORD", "rahasia123"),
+                "port": int(os.getenv("CONF_MYSQL_PORT", 3306)),
+                "database": os.getenv("CONF_MYSQL_DATABASE_NAME", "database"),
             },
         }
     },
     "apps": {
-        "models": {
-            "models": ["models.user"],
-            "default_connection": "conn",
-        },
+        "user": {"models": ["models.user"],"default_connection": "conn"},
     },
 }

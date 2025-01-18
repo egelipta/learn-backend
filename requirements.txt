@@ -4,9 +4,11 @@ tortoise-orm
 python-dotenv
 pydantic
 aiomysql
-passlib[bcrypt]
 pyjwt
 python-multipart
 python-jose
 pydantic-settings
 typing-extensions==4.6.1
+
+passlib[bcrypt]==1.7.4
+bcrypt<4.0
