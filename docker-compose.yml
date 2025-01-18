@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  inidb:
+  learndb:
     image: mysql:5.7
-    container_name: inidb
+    container_name: learndb
     environment:
       MYSQL_ROOT_PASSWORD: ${CONF_MYSQL_PASSWORD}
       MYSQL_DATABASE: ${CONF_MYSQL_DATABASE_NAME}
@@ -15,17 +15,17 @@ services:
       - "${CONF_MYSQL_PORT}:3306"
     volumes:
       - dbdata:/var/lib/mysql
-  inipma:
+  learnpma:
     image: phpmyadmin:latest
-    container_name: inipma
+    container_name: learnpma
     environment:
-      PMA_HOST: inidb
+      PMA_HOST: learndb
       PMA_ARBITRARY: 1
       UPLOAD_LIMIT: 512M
     restart: always
     ports:
       - 8084:80
     links:
-      - inidb
+      - learndb
 volumes:
   dbdata:

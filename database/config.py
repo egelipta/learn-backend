@@ -13,7 +13,7 @@ TORTOISE_ORM = {
                 "user": os.getenv("PDA_MYSQL_USER", "user"),
                 "password": os.getenv("PDA_MYSQL_PASSWORD", "rahasia123"),
                 "port": int(os.getenv("PDA_MYSQL_PORT", 3306)),
-                "database": os.getenv("PDA_MYSQL_DATABASE_NAME", "inidatabase"),
+                "database": os.getenv("PDA_MYSQL_DATABASE_NAME", "database"),
             },
         }
     },
