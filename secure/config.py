@@ -5,4 +5,8 @@ class Config(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
+    SWAGGER_UI_OAUTH2_REDIRECT_URL: str = "/api/v1/auth/login"
+
+    PROJECT_NAME:str
+
 settings = Config()

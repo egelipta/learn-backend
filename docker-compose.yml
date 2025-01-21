@@ -15,6 +15,7 @@ services:
       - "${CONF_MYSQL_PORT}:3306"
     volumes:
       - dbdata:/var/lib/mysql
+
   learnpma:
     image: phpmyadmin:latest
     container_name: learnpma
